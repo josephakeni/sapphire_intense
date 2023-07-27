@@ -1,0 +1,13 @@
+container_name       = "flask-app_prod"
+ecs_cluster_name     = "flask-fargate-prod"
+launch_type          = "FARGATE"
+network_mode         = "awsvpc"
+iam_instance_profile = "TundeSSMRole"
+instance_type        = "t2.micro"
+key_name             = "cloud1a"
+app_port             = "5000"
+desired_capacity = 1
+max_size         = 2
+min_size         = 1
+app_image        = "399839753928.dkr.ecr.eu-west-1.amazonaws.com/flask_app:v1"
+health_check_path = "/hello"
